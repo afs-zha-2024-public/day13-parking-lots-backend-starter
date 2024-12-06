@@ -42,7 +42,7 @@ public class ParkingLot {
             throw new NoAvailablePositionException();
         }
 
-        Ticket ticket = new Ticket(car.plateNumber(), tickets.size() + 1, this.id);
+        Ticket ticket = new Ticket(car.plateNumber(),  getPositionToPark(), this.id);
         tickets.put(ticket, car);
         return ticket;
     }
