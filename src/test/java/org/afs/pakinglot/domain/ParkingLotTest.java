@@ -116,11 +116,20 @@ class ParkingLotTest {
         // Description : I need a function to get the position of the car in the parking lot
         // Input: is the tickets of the parking lot
         // Output: is the position of the car should park
-        // Call this function is "getPositionToPark"
+        // Call this function is "getPositionToPark"\
 
         // Case 1:
         // Given an empty parking lot without tickets, capacity is 9
         // When getPositionToPark Then return the position number is 1
+        @Test
+        void should_return_position_1_when_getPositionToPark_given_an_empty_parking_lot() {
+            // Given
+            ParkingLot parkingLot = new ParkingLot();
+            // When
+            int position = parkingLot.getPositionToPark();
+            // Then
+            assertEquals(1, position);
+        }
 
         // Case 2:
         // Given a NOT empty parking lot, capacity is 9

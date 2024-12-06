@@ -80,6 +80,6 @@ public class ParkingLot {
     }
 
     public int getPositionToPark() {
-        return 0;
+        return this.tickets.size()+1;
     }
 }
