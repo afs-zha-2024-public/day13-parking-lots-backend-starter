@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
 import org.afs.pakinglot.domain.exception.NoAvailablePositionException;
 import org.afs.pakinglot.domain.exception.UnrecognizedTicketException;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 class ParkingLotTest {
@@ -91,7 +93,6 @@ class ParkingLotTest {
         assertEquals("Unrecognized parking ticket.", exception.getMessage());
     }
 
-
     @Test
     void should_return_ticks_list_when_getTickets_given_a_some_parked_cars() {
         // Given
@@ -108,4 +109,38 @@ class ParkingLotTest {
         assertTrue(expectedTickets.containsAll(tickets));
     }
 
+//    @Nested
+//    @DisplayName("Parking Tickets Position Tests")
+//    class ParkingTests {
+        // Context:
+        // Description : I need a function to get the position of the car in the parking lot
+        // Input: is the tickets of the parking lot
+        // Output: is the position of the car should park
+        // Call this function is "getPositionToPark"
+
+        // Case 1:
+        // Given an empty parking lot without tickets, capacity is 9
+        // Given a car to park, and the plate number is “AB-1234”
+        // When getPositionToPark Then return the position number is 1,
+
+        // Case 2:
+        // Given a NOT empty parking lot, capacity is 9
+        // Given a ticket, the ticket position is 1
+        // Given a car to park, and the plate number is “AB-1234”
+        // When getPositionToPark Then return the position number is 2
+
+        // Case 3:
+        // Given a NOT empty parking lot, capacity is 9
+        // Given a ticket, the position is 5
+        // Given all other positions are empty
+        // Given a car to park, and the plate number is “AB-1234”
+        // When getPositionToPark Then return ticket with position 1
+
+        // Case 4:
+        // Given a NOT empty parking lot, capacity is 9
+        // Given some tickets, the position is 1,3,5,7,9
+        // Given all other positions are empty
+        // Given a car to park, and the plate number is “AB-1234”
+        // When getPositionToPark Then return ticket with position 2
+//    }
 }

@@ -14,7 +14,6 @@ public class CarPlateGenerator {
         // Generate four random digits
         int digits = random.nextInt(10000); // Random number between 0 and 9999
 
-        // Format as "XX-1234"
         return String.format("%c%c-%04d", letter1, letter2, digits);
     }
 
