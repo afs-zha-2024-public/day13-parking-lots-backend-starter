@@ -79,4 +79,7 @@ public class ParkingLot {
         return tickets.keySet().stream().toList();
     }
 
+    public int getPositionToPark() {
+        return 0;
+    }
 }
