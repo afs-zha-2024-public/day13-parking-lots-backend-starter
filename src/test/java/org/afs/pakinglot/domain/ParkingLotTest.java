@@ -151,6 +151,26 @@ class ParkingLotTest {
         // Given a ticket, the position is 5
         // Given all other positions are empty
         // When getPositionToPark Then return ticket with position 1
+        @Test
+        void should_return_position_1_when_getPositionToPark_given_a_parking_lot_with_a_ticket_in_position_5() {
+            // Given
+            ParkingLot parkingLot = new ParkingLot();
+            Ticket ticketCar1 = parkingLot.park(new Car(CarPlateGenerator.generatePlate()));
+            Ticket ticketCar2 = parkingLot.park(new Car(CarPlateGenerator.generatePlate()));
+            Ticket ticketCar3 = parkingLot.park(new Car(CarPlateGenerator.generatePlate()));
+            Ticket ticketCar4 = parkingLot.park(new Car(CarPlateGenerator.generatePlate()));
+            parkingLot.park(new Car(CarPlateGenerator.generatePlate()));
+
+            parkingLot.fetch(ticketCar1);
+            parkingLot.fetch(ticketCar2);
+            parkingLot.fetch(ticketCar3);
+            parkingLot.fetch(ticketCar4);
+            // When
+            int position = parkingLot.getPositionToPark();
+
+            // Then
+            assertEquals(1, position);
+        }
 
         // Case 4:
         // Given a NOT empty parking lot, capacity is 9

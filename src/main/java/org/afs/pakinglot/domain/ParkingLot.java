@@ -80,6 +80,16 @@ public class ParkingLot {
     }
 
     public int getPositionToPark() {
-        return this.tickets.size()+1;
+        // Context:  I have some tickets, each ticket has a position
+        // The position is the order of the car parked in the parking lot, for example parking lot has 9 positions
+        // Given only a ticket position is 5
+        // Then should return the position 1
+        for (int postionIdex = 1; postionIdex <= capacity; postionIdex++) {
+            int targetPosition = postionIdex;
+            if (tickets.keySet().stream().noneMatch(ticket -> ticket.position() == targetPosition)) {
+                return postionIdex;
+            }
+        }
+        throw new NoAvailablePositionException();
     }
 }
