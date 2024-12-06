@@ -87,7 +87,7 @@ public class ParkingLot {
         for (int postionIdex = 1; postionIdex <= capacity; postionIdex++) {
             int targetPosition = postionIdex;
             if (tickets.keySet().stream().noneMatch(ticket -> ticket.position() == targetPosition)) {
-                return postionIdex;
+                return targetPosition;
             }
         }
         throw new NoAvailablePositionException();
